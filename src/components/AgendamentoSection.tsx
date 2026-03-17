@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Video, ArrowRight, CheckCircle } from "lucide-react";
+import { Video, MapPin, ArrowRight, CheckCircle } from "lucide-react";
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
