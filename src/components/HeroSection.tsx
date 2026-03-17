@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-const transition = { duration: 0.8, ease: [0.22, 1, 0.36, 1] };
+const transition = { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const };
 
 const HeroSection = () => (
   <section className="pt-36 md:pt-44 pb-20 md:pb-28 px-6">
