@@ -40,16 +40,12 @@ const AgendamentoSection = () => {
             </p>
             <div className="space-y-4">
               {[
-                { icon: Video, label: "Atendimento Online", sub: "Via Google Meet ou Skype" },
-                { icon: () => <span className="text-primary font-display text-lg">R</span>, label: "Atendimento Presencial", sub: "Recife, PE" },
+                { Icon: Video, label: "Atendimento Online", sub: "Via Google Meet ou Skype" },
+                { Icon: MapPin, label: "Atendimento Presencial", sub: "Recife, PE" },
               ].map((item) => (
                 <div key={item.label} className="flex items-center gap-4 p-4 rounded-2xl bg-background">
                   <div className="w-10 h-10 rounded-full bg-card flex items-center justify-center shadow-sm border border-primary/5">
-                    {typeof item.icon === "function" ? (
-                      <item.icon />
-                    ) : (
-                      <item.icon size={18} className="text-primary" />
-                    )}
+                    <item.Icon size={18} className="text-primary" />
                   </div>
                   <div>
                     <p className="text-sm font-semibold">{item.label}</p>
