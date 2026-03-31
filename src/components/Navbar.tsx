@@ -1,30 +1,64 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const links = [
+  { label: "Sobre", href: "#sobre" },
+  { label: "Abordagem", href: "#abordagem" },
+  { label: "Serviços", href: "#servicos" },
+  { label: "Infantil", href: "#infantil" },
+];
+
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <nav className="fixed top-0 w-full z-50 border-b border-primary/5 bg-background/80 backdrop-blur-md">
+    <nav
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-background/90 backdrop-blur-md border-b border-primary/5 shadow-sm"
+          : "bg-transparent"
+      }`}
+    >
       <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
-        <span className="font-display text-xl tracking-tight">Matias Lyra de Carvalho</span>
-        <div className="hidden md:flex gap-8 text-sm font-medium text-muted-foreground">
-          <a href="#sobre" className="hover:text-foreground transition-colors duration-500">Sobre</a>
-          <a href="#abordagem" className="hover:text-foreground transition-colors duration-500">Abordagem</a>
-          <a href="#servicos" className="hover:text-foreground transition-colors duration-500">Serviços</a>
-          <a href="#agendar" className="hover:text-foreground transition-colors duration-500">Agendar</a>
-        </div>
-        <a
-          href="#agendar"
-          className="hidden md:inline-flex bg-primary text-primary-foreground px-5 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity duration-500"
-        >
-          Agendar Consulta
+        <a href="#" className="font-display text-xl tracking-tight text-foreground">
+          Matias Lyra de Carvalho
         </a>
-        <button onClick={() => setOpen(!open)} className="md:hidden p-2" aria-label="Menu">
+
+        <div className="hidden md:flex items-center gap-8">
+          {links.map((link) => (
+            <a
+              key={link.href}
+              href={link.href}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-400"
+            >
+              {link.label}
+            </a>
+          ))}
+          <a
+            href="#agendar"
+            className="bg-primary text-primary-foreground px-6 py-2.5 rounded-full text-sm font-medium hover:opacity-90 transition-opacity duration-500"
+          >
+            Agendar Consulta
+          </a>
+        </div>
+
+        <button
+          onClick={() => setOpen(!open)}
+          className="md:hidden p-2 text-foreground"
+          aria-label={open ? "Fechar menu" : "Abrir menu"}
+        >
           {open ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
+
       <AnimatePresence>
         {open && (
           <motion.div
@@ -35,14 +69,14 @@ const Navbar = () => {
             className="md:hidden border-t border-primary/5 bg-background/95 backdrop-blur-md overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {["Sobre", "Abordagem", "Serviços", "Agendar"].map((item) => (
+              {links.map((link) => (
                 <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
+                  key={link.href}
+                  href={link.href}
                   onClick={() => setOpen(false)}
                   className="text-lg font-medium text-foreground/70 hover:text-foreground transition-colors"
                 >
-                  {item}
+                  {link.label}
                 </a>
               ))}
               <a
