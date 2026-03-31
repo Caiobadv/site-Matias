@@ -11,12 +11,12 @@ const pillars = [
   {
     number: "01",
     title: "Escuta sem julgamento",
-    text: "A terapia é um espaço onde sua fala é acolhida integralmente. Sem respostas apressadas, sem direcionamentos impostos. Aqui, o que importa é o que surge da sua própria história.",
+    text: "A terapia é um espaço onde sua fala é acolhida integralmente. Sem respostas apressadas, sem direcionamentos impostos. O que importa é o que surge da sua própria história.",
   },
   {
     number: "02",
     title: "Respeito ao seu tempo",
-    text: "Não existe um cronograma fixo para o processo terapêutico. Cada pessoa tem seu ritmo, e o trabalho clínico respeita essa singularidade — sem pressa, sem fórmulas.",
+    text: "Não existe um cronograma fixo para o processo terapêutico. Cada pessoa tem seu ritmo, e o trabalho clínico respeita essa singularidade. Sem pressa, sem fórmulas.",
   },
   {
     number: "03",
@@ -37,7 +37,7 @@ const AbordagemSection = () => (
         </h2>
         <p className="text-muted-foreground leading-[1.8] text-base md:text-lg">
           A psicanálise não oferece respostas prontas. Ela oferece um espaço para
-          que você possa escutar a si mesmo — e, a partir dessa escuta, encontrar
+          que você possa escutar a si mesmo. A partir dessa escuta, encontrar
           seus próprios caminhos.
         </p>
       </motion.div>

@@ -28,7 +28,7 @@ const services = [
     title: "Atendimento Presencial",
     subtitle: "Recife, PE",
     description:
-      "Consultório em Recife com ambiente reservado e acolhedor — pensado para oferecer a privacidade que o processo terapêutico pede.",
+      "Consultório em Recife com ambiente reservado e acolhedor, pensado para oferecer a privacidade que o processo terapêutico pede.",
   },
 ];
 

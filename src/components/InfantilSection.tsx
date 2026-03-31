@@ -24,13 +24,13 @@ const InfantilSection = () => (
             <p className="text-muted-foreground leading-[1.8]">
               Crianças nem sempre expressam o que sentem por meio de palavras.
               Muitas vezes, é no brincar, no desenho e no comportamento que suas
-              questões se manifestam.
+              questões aparecem.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
               Com formação em psicoterapia de criança pelo CPPL, ofereço um
               atendimento especializado que acolhe a criança em sua forma própria
-              de se expressar — e que trabalha junto à família para construir um
-              processo terapêutico seguro e significativo.
+              de se expressar. O trabalho acontece junto à família para construir
+              um processo terapêutico seguro e significativo.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
               Se você é pai, mãe ou responsável e percebe que sua criança está
@@ -69,7 +69,7 @@ const InfantilSection = () => (
                   "Acolher a criança em sua forma própria de se expressar."
                 </p>
                 <p className="text-xs text-muted-foreground mt-4">
-                  Formação em Psicoterapia de Criança — CPPL
+                  Formação em Psicoterapia de Criança pelo CPPL
                 </p>
               </div>
             </div>

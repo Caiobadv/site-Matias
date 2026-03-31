@@ -12,7 +12,7 @@ const credentials = [
   {
     icon: GraduationCap,
     label: "Universidade Católica de Pernambuco",
-    detail: "Formação em Psicologia — 2019",
+    detail: "Formação em Psicologia, 2019",
   },
   {
     icon: BookOpen,
@@ -47,19 +47,19 @@ const SobreSection = () => (
             <p className="text-muted-foreground leading-[1.8]">
               Acredito que o espaço terapêutico precisa ser, antes de tudo, um
               lugar onde você se sinta à vontade. É ali que sua história será
-              compartilhada — e sei que haverá momentos difíceis nesse caminho.
+              compartilhada. Sei que haverá momentos difíceis nesse caminho,
+              e estou aqui para isso.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
               Busco ampliar constantemente minha formação para além da abordagem
               clínica, porque entendo que cuidar de alguém é também compreender
               o mundo em que essa pessoa vive: suas questões de gênero,
-              sexualidade, raça, e os processos sociais que a atravessam.
+              sexualidade, raça e os processos sociais que a atravessam.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
               Cada pessoa traz um ritmo próprio. Como psicólogo, procuro me
-              adequar a cada paciente e ao momento que ele está vivendo — porque
-              escutar de verdade é também saber quando o silêncio é parte do
-              processo.
+              adequar a cada paciente e ao momento que ele está vivendo.
+              Escutar de verdade é também saber quando o silêncio precisa existir.
             </p>
           </div>
         </motion.div>
@@ -95,7 +95,7 @@ const SobreSection = () => (
               processo."
             </p>
             <p className="text-xs text-muted-foreground mt-3 font-medium">
-              — Matias Lyra de Carvalho
+              Matias Lyra de Carvalho
             </p>
           </div>
         </motion.div>

@@ -53,7 +53,7 @@ const HeroSection = () => (
           <div className="relative aspect-[4/5] md:aspect-[3/4] rounded-3xl overflow-hidden bg-primary/5">
             <img
               src="/photo-matias.jpeg"
-              alt="Matias Lyra de Carvalho — Psicólogo Clínico"
+              alt="Matias Lyra de Carvalho, Psicólogo Clínico"
               className="w-full h-full object-cover object-center"
               loading="eager"
               onError={(e) => {

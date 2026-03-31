@@ -36,8 +36,8 @@ const AgendamentoSection = () => {
             </h2>
             <p className="text-muted-foreground leading-[1.8] mb-8">
               O primeiro passo é uma conversa inicial para entendermos sua
-              demanda e encontrarmos a melhor forma de caminhar juntos. Entre em
-              contato pelo WhatsApp ou envie uma mensagem pelo formulário.
+              demanda e encontrarmos a melhor forma de caminhar juntos.
+              Entre em contato pelo WhatsApp ou envie uma mensagem pelo formulário.
             </p>
 
             <a
