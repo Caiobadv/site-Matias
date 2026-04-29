@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 const transition = { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const };
 
 const HeroSection = () => (
-  <section className="pt-32 md:pt-40 pb-16 md:pb-24 px-6">
+  <section className="pt-32 md:pt-40 pb-24 md:pb-32 px-6">
     <div className="max-w-6xl mx-auto">
       <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
         <motion.div
@@ -21,8 +21,9 @@ const HeroSection = () => (
             que precisa ser dito.
           </h1>
           <p className="text-base md:text-lg text-muted-foreground leading-relaxed mb-10 max-w-xl">
-            Psicólogo clínico com abordagem psicanalítica. Atendimento
-            presencial em Recife e online para todo o Brasil.
+            Psicólogo clínico com abordagem psicanalítica. Atendimento para
+            crianças, adolescentes e adultos. Presencial em Recife e online
+            para todo o Brasil.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a

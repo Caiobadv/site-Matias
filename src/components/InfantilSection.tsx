@@ -33,9 +33,12 @@ const InfantilSection = () => (
               um processo terapêutico seguro e significativo.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
-              Se você é pai, mãe ou responsável e percebe que sua criança está
-              passando por dificuldades emocionais, comportamentais ou
-              relacionais, a psicoterapia pode ser um caminho de cuidado.
+              É importante o trabalho da família junto com o processo
+              terapêutico. Tendo a compreensão de que às vezes há a necessidade
+              desse contato para que a criança possa expressar suas dores e seus
+              sentimentos, o setting terapêutico pode ser o ambiente propício
+              para que ela tenha a possibilidade de falar ou demonstrar o que
+              sente.
             </p>
           </div>
           <a
@@ -57,22 +60,24 @@ const InfantilSection = () => (
           transition={{ ...fadeIn.transition, delay: 0.15 }}
           className="flex justify-center"
         >
-          <div className="relative w-full max-w-sm">
-            <div className="aspect-square rounded-3xl bg-primary/5 border border-primary/8 flex items-center justify-center">
-              <div className="text-center px-8">
-                <Heart
-                  size={48}
-                  className="text-primary/30 mx-auto mb-6"
-                  strokeWidth={1.5}
-                />
-                <p className="font-display text-xl text-foreground italic leading-relaxed mb-2">
-                  "Acolher a criança em sua forma própria de se expressar."
+          <div className="w-full max-w-sm space-y-4">
+            {[
+              { label: "Formação especializada", detail: "Psicoterapia de Criança pelo CPPL" },
+              { label: "Abordagem", detail: "Psicanalítica, adaptada à linguagem e ao tempo da criança" },
+              { label: "Envolvimento familiar", detail: "Trabalho conjunto com a família ao longo do processo" },
+            ].map((item) => (
+              <div
+                key={item.label}
+                className="p-5 rounded-2xl bg-primary/5 border border-primary/8"
+              >
+                <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-1">
+                  {item.label}
                 </p>
-                <p className="text-xs text-muted-foreground mt-4">
-                  Formação em Psicoterapia de Criança pelo CPPL
+                <p className="text-sm text-foreground leading-relaxed">
+                  {item.detail}
                 </p>
               </div>
-            </div>
+            ))}
           </div>
         </motion.div>
       </div>

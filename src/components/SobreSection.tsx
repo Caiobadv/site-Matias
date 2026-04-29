@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen, Baby } from "lucide-react";
+import { GraduationCap, BookOpen, Baby, MapPin } from "lucide-react";
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -24,6 +24,11 @@ const credentials = [
     label: "Psicoterapia de Criança",
     detail: "Formação pelo CPPL",
   },
+  {
+    icon: MapPin,
+    label: "Recife, PE · Online",
+    detail: "Atendimento presencial e online para todo o Brasil",
+  },
 ];
 
 const SobreSection = () => (
@@ -39,27 +44,31 @@ const SobreSection = () => (
           </h2>
           <div className="space-y-5">
             <p className="text-muted-foreground leading-[1.8]">
-              Sou Matias Lyra de Carvalho, psicólogo clínico formado pela
-              Universidade Católica de Pernambuco, com especialização em
+              Sou Matias Lyra de Carvalho, psicólogo formado pela Universidade
+              Católica de Pernambuco em 2019. Tenho especialização em
               intervenções clínicas na abordagem psicanalítica e formação em
-              psicoterapia de criança pelo CPPL.
+              psicoterapia de criança pelo CPPL. Atendo de forma online e
+              presencial.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
-              Acredito que o espaço terapêutico precisa ser, antes de tudo, um
-              lugar onde você se sinta à vontade. É ali que sua história será
-              compartilhada. Sei que haverá momentos difíceis nesse caminho,
-              e estou aqui para isso.
+              Acredito que seja fundamental o paciente se sentir à vontade e
+              seguro no setting clínico, afinal é o espaço no qual ele
+              compartilhará sua história, e certamente haverá momentos árduos
+              nesse processo.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
-              Busco ampliar constantemente minha formação para além da abordagem
-              clínica, porque entendo que cuidar de alguém é também compreender
-              o mundo em que essa pessoa vive: suas questões de gênero,
-              sexualidade, raça e os processos sociais que a atravessam.
+              Penso que é muito importante o psicólogo ter um conhecimento para
+              além da sua abordagem. Por isso busco ampliar minha formação para
+              melhor atender meus pacientes, compreendendo o meio social ao qual
+              eles pertencem e os processos que os atravessam: questões de
+              gênero, sexualidade, raça, violência, entre tantos outros aspectos
+              que fazem parte de suas vivências.
             </p>
             <p className="text-muted-foreground leading-[1.8]">
-              Cada pessoa traz um ritmo próprio. Como psicólogo, procuro me
-              adequar a cada paciente e ao momento que ele está vivendo.
-              Escutar de verdade é também saber quando o silêncio precisa existir.
+              Considero que muitas vezes o silêncio é essencial para se fazer
+              terapia, porém esse silêncio não pode ser algo que paralise o
+              paciente. Por isso, como psicólogo, busco me adequar a cada
+              pessoa e ao momento pelo qual ela está passando.
             </p>
           </div>
         </motion.div>
@@ -87,16 +96,6 @@ const SobreSection = () => (
                 </div>
               </div>
             ))}
-          </div>
-
-          <div className="mt-8 p-6 rounded-2xl bg-primary/5 border border-primary/8">
-            <p className="font-display text-lg text-foreground italic leading-relaxed">
-              "Escutar de verdade é também saber quando o silêncio é parte do
-              processo."
-            </p>
-            <p className="text-xs text-muted-foreground mt-3 font-medium">
-              Matias Lyra de Carvalho
-            </p>
           </div>
         </motion.div>
       </div>

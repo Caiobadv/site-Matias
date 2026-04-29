@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MessageCircle, Video, MapPin, ArrowRight, CheckCircle } from "lucide-react";
+import { MessageCircle, Video, MapPin, ArrowRight } from "lucide-react";
 
 const fadeIn = {
   initial: { opacity: 0, y: 24 },
@@ -11,15 +11,15 @@ const fadeIn = {
 
 const AgendamentoSection = () => {
   const [formData, setFormData] = useState({ name: "", contact: "", message: "" });
-  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", contact: "", message: "" });
-      setSubmitted(false);
-    }, 4000);
+    const text = [
+      `Olá, me chamo ${formData.name}.`,
+      formData.contact ? `Meu contato: ${formData.contact}.` : "",
+      formData.message ? formData.message : "",
+    ].filter(Boolean).join(" ");
+    window.open(`https://wa.me/5581995448555?text=${encodeURIComponent(text)}`, "_blank");
   };
 
   return (
@@ -82,78 +82,66 @@ const AgendamentoSection = () => {
             transition={{ ...fadeIn.transition, delay: 0.15 }}
           >
             <div className="p-8 rounded-3xl border border-primary/8 bg-card shadow-sm">
-              {submitted ? (
-                <div className="flex flex-col items-center justify-center py-12 text-center">
-                  <CheckCircle size={48} className="text-primary mb-4" />
-                  <h3 className="font-display text-2xl text-foreground mb-2">
-                    Mensagem enviada
-                  </h3>
-                  <p className="text-sm text-muted-foreground">
-                    Entrarei em contato em breve. Obrigado.
-                  </p>
+              <form onSubmit={handleSubmit} className="space-y-5">
+                <p className="text-sm font-medium text-foreground mb-1">
+                  Ou envie uma mensagem
+                </p>
+                <div>
+                  <label className="label-caps text-muted-foreground mb-2 block">
+                    Nome
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    className="w-full p-3.5 rounded-xl border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    placeholder="Como gostaria de ser chamado?"
+                  />
                 </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-5">
-                  <p className="text-sm font-medium text-foreground mb-1">
-                    Ou envie uma mensagem
-                  </p>
-                  <div>
-                    <label className="label-caps text-muted-foreground mb-2 block">
-                      Nome
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.name}
-                      onChange={(e) =>
-                        setFormData({ ...formData, name: e.target.value })
-                      }
-                      className="w-full p-3.5 rounded-xl border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
-                      placeholder="Como gostaria de ser chamado?"
-                    />
-                  </div>
-                  <div>
-                    <label className="label-caps text-muted-foreground mb-2 block">
-                      E-mail ou telefone
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={formData.contact}
-                      onChange={(e) =>
-                        setFormData({ ...formData, contact: e.target.value })
-                      }
-                      className="w-full p-3.5 rounded-xl border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
-                      placeholder="Seu melhor contato"
-                    />
-                  </div>
-                  <div>
-                    <label className="label-caps text-muted-foreground mb-2 block">
-                      Mensagem
-                    </label>
-                    <textarea
-                      value={formData.message}
-                      onChange={(e) =>
-                        setFormData({ ...formData, message: e.target.value })
-                      }
-                      rows={4}
-                      className="w-full p-3.5 rounded-xl border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
-                      placeholder="Conte brevemente o que te traz aqui..."
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    disabled={!formData.name || !formData.contact}
-                    className="w-full bg-primary text-primary-foreground py-4 rounded-xl font-medium disabled:opacity-30 transition-all duration-500 flex items-center justify-center gap-2 group"
-                  >
-                    Enviar mensagem
-                    <ArrowRight
-                      size={16}
-                      className="group-hover:translate-x-1 transition-transform duration-300"
-                    />
-                  </button>
-                </form>
-              )}
+                <div>
+                  <label className="label-caps text-muted-foreground mb-2 block">
+                    E-mail ou telefone
+                  </label>
+                  <input
+                    type="text"
+                    required
+                    value={formData.contact}
+                    onChange={(e) =>
+                      setFormData({ ...formData, contact: e.target.value })
+                    }
+                    className="w-full p-3.5 rounded-xl border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300"
+                    placeholder="Seu melhor contato"
+                  />
+                </div>
+                <div>
+                  <label className="label-caps text-muted-foreground mb-2 block">
+                    Mensagem
+                  </label>
+                  <textarea
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    rows={4}
+                    className="w-full p-3.5 rounded-xl border border-input bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all duration-300 resize-none"
+                    placeholder="Conte brevemente o que te traz aqui..."
+                  />
+                </div>
+                <button
+                  type="submit"
+                  disabled={!formData.name || !formData.contact}
+                  className="w-full bg-primary text-primary-foreground py-4 rounded-xl font-medium disabled:opacity-30 transition-all duration-500 flex items-center justify-center gap-2 group"
+                >
+                  Enviar pelo WhatsApp
+                  <ArrowRight
+                    size={16}
+                    className="group-hover:translate-x-1 transition-transform duration-300"
+                  />
+                </button>
+              </form>
             </div>
           </motion.div>
         </div>

@@ -10,18 +10,18 @@ const fadeIn = {
 const pillars = [
   {
     number: "01",
-    title: "Escuta sem julgamento",
-    text: "A terapia é um espaço onde sua fala é acolhida integralmente. Sem respostas apressadas, sem direcionamentos impostos. O que importa é o que surge da sua própria história.",
+    title: "A cura pela palavra",
+    text: "A abordagem psicanalítica tem como objetivo buscar a cura pela palavra. É fundamental que o paciente possa falar e se escutar, de maneira que possibilite encontrar o melhor caminho para resolver as suas questões.",
   },
   {
     number: "02",
-    title: "Respeito ao seu tempo",
-    text: "Não existe um cronograma fixo para o processo terapêutico. Cada pessoa tem seu ritmo, e o trabalho clínico respeita essa singularidade. Sem pressa, sem fórmulas.",
+    title: "Acolhimento e escuta",
+    text: "A escuta precisa ser isenta de julgamento moral por parte do terapeuta. Por isso, busco proporcionar um ambiente clínico acolhedor, onde o paciente se sinta à vontade para trabalhar seus pontos.",
   },
   {
     number: "03",
-    title: "Ética e sigilo",
-    text: "Tudo o que é compartilhado no espaço terapêutico é protegido pelo sigilo profissional. Esse compromisso é a base para que a confiança se construa e a fala possa acontecer com liberdade.",
+    title: "Sigilo absoluto",
+    text: "Tudo o que é dito na terapia não irá sair do setting clínico. O sigilo é um compromisso ético fundamental, e é ele que permite que a fala aconteça com liberdade.",
   },
 ];
 
@@ -36,9 +36,9 @@ const AbordagemSection = () => (
           Como <span className="italic text-primary">trabalho</span>
         </h2>
         <p className="text-muted-foreground leading-[1.8] text-base md:text-lg">
-          A psicanálise não oferece respostas prontas. Ela oferece um espaço para
-          que você possa escutar a si mesmo. A partir dessa escuta, encontrar
-          seus próprios caminhos.
+          Minha abordagem é psicanalítica. Não raro, lidar consigo mesmo é um
+          caminho árduo e penoso. Sabendo disso, busco proporcionar que o
+          paciente se sinta à vontade para trabalhar seus pontos.
         </p>
       </motion.div>
 

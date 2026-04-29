@@ -11,10 +11,10 @@ const fadeIn = {
 const services = [
   {
     icon: User,
-    title: "Psicoterapia Individual",
-    subtitle: "Adultos",
+    title: "Adultos e Adolescentes",
+    subtitle: "Psicoterapia Individual",
     description:
-      "Atendimento voltado para adultos que buscam compreender seus conflitos, angústias e padrões que se repetem. Um espaço para olhar para si com profundidade.",
+      "Atendimento para adultos e adolescentes que buscam compreender seus conflitos, angústias e padrões que se repetem. Um espaço de escuta para olhar para si com profundidade.",
   },
   {
     icon: Video,
@@ -40,8 +40,7 @@ const ServicosSection = () => (
           Serviços
         </span>
         <h2 className="text-4xl md:text-5xl font-display text-foreground leading-[0.95]">
-          Formas de{" "}
-          <span className="italic text-primary">atendimento</span>
+          Formas de <span className="italic text-primary">atendimento</span>
         </h2>
       </motion.div>
 
@@ -56,10 +55,10 @@ const ServicosSection = () => (
             <div className="w-12 h-12 rounded-xl bg-primary/8 flex items-center justify-center mb-6 group-hover:bg-primary/12 transition-colors duration-700">
               <s.icon size={22} className="text-primary" />
             </div>
-            <h3 className="font-display text-2xl text-foreground mb-1">
+            <p className="text-xs font-medium text-accent mb-1">{s.subtitle}</p>
+            <h3 className="font-display text-2xl text-foreground mb-4">
               {s.title}
             </h3>
-            <p className="text-xs font-medium text-accent mb-4">{s.subtitle}</p>
             <p className="text-muted-foreground leading-[1.8] text-sm mb-5">
               {s.description}
             </p>
